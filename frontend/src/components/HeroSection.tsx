@@ -14,38 +14,38 @@ export const HeroSection = () => {
         <div className="absolute inset-0 bg-gradient-to-br from-background via-background to-muted/30" />
         
         {/* Layered fashion elements with parallax */}
-        <div className="absolute top-[15%] right-[10%] w-[300px] h-[400px] opacity-20 animate-parallax-slow">
+        <div className="absolute top-[15%] right-[10%] w-[300px] h-[400px] opacity-20 dark:opacity-15 animate-parallax-slow">
           <img 
             src={heroSketch} 
             alt="" 
-            className="w-full h-full object-contain drop-shadow-2xl"
+            className="w-full h-full object-contain drop-shadow-2xl hero-image"
             style={{ transform: 'rotate(-8deg)' }}
           />
         </div>
 
-        <div className="absolute top-[40%] left-[5%] w-[280px] h-[280px] opacity-25 animate-parallax-medium">
+        <div className="absolute top-[40%] left-[5%] w-[280px] h-[280px] opacity-25 dark:opacity-20 animate-parallax-medium">
           <img 
             src={heroFabric} 
             alt="" 
-            className="w-full h-full object-cover rounded-2xl shadow-2xl"
+            className="w-full h-full object-cover rounded-2xl shadow-2xl hero-image"
             style={{ transform: 'rotate(5deg)' }}
           />
         </div>
 
-        <div className="absolute bottom-[25%] right-[15%] w-[350px] h-[350px] opacity-15 animate-parallax-fast">
+        <div className="absolute bottom-[25%] right-[15%] w-[350px] h-[350px] opacity-15 dark:opacity-10 animate-parallax-fast">
           <img 
             src={heroPattern} 
             alt="" 
-            className="w-full h-full object-contain"
+            className="w-full h-full object-contain hero-image"
             style={{ transform: 'rotate(-12deg)' }}
           />
         </div>
 
-        <div className="absolute top-[10%] left-[8%] w-[400px] h-[250px] opacity-20 animate-parallax-slow" style={{ animationDelay: '1s' }}>
+        <div className="absolute top-[10%] left-[8%] w-[400px] h-[250px] opacity-20 dark:opacity-15 animate-parallax-slow" style={{ animationDelay: '1s' }}>
           <img 
             src={heroMoodboard} 
             alt="" 
-            className="w-full h-full object-cover rounded-xl shadow-xl"
+            className="w-full h-full object-cover rounded-xl shadow-xl hero-image"
             style={{ transform: 'rotate(3deg)' }}
           />
         </div>
@@ -92,6 +92,7 @@ export const HeroSection = () => {
               size="lg" 
               variant="outline" 
               className="rounded-2xl px-8 h-12 text-base font-medium group border-border hover:border-primary"
+              onClick={() => window.location.href = '/watch-demo'}
             >
               <Play className="mr-2 h-4 w-4 transition-transform group-hover:scale-110" />
               Watch Demo

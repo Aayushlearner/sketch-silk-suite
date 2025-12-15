@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Menu, X, Sparkles } from "lucide-react";
+import { ThemeToggle } from "@/components/theme-toggle";
 
 export const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -29,6 +30,7 @@ export const Navbar = () => {
           </div>
 
           <div className="hidden md:flex items-center gap-4">
+            <ThemeToggle />
             <Button variant="ghost" size="sm">Sign In</Button>
             <Button size="sm" className="bg-primary hover:bg-primary/90 text-primary-foreground rounded-2xl">
               Start Free Trial
@@ -69,6 +71,9 @@ export const Navbar = () => {
               Dashboard
             </Link>
             <div className="px-4 space-y-2">
+              <div className="flex justify-center mb-2">
+                <ThemeToggle />
+              </div>
               <Button variant="ghost" size="sm" className="w-full">Sign In</Button>
               <Button size="sm" className="w-full bg-primary hover:bg-primary/90 text-primary-foreground rounded-2xl">
                 Start Free Trial

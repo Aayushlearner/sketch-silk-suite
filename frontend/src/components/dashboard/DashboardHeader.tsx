@@ -1,22 +1,9 @@
-import { Moon, Sun, Bell, User } from "lucide-react";
+import { Bell, User } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
-import { useEffect, useState } from "react";
+import { ThemeToggle } from "@/components/theme-toggle";
 
 export const DashboardHeader = () => {
-  const [theme, setTheme] = useState<"light" | "dark">("light");
-
-  useEffect(() => {
-    const isDark = document.documentElement.classList.contains("dark");
-    setTheme(isDark ? "dark" : "light");
-  }, []);
-
-  const toggleTheme = () => {
-    const newTheme = theme === "light" ? "dark" : "light";
-    setTheme(newTheme);
-    document.documentElement.classList.toggle("dark");
-  };
-
   return (
     <header className="fixed top-0 left-64 right-0 h-16 border-b border-border bg-background/80 backdrop-blur-md z-40">
       <div className="h-full px-6 flex items-center justify-between">
@@ -25,18 +12,7 @@ export const DashboardHeader = () => {
         </div>
 
         <div className="flex items-center gap-3">
-          <Button
-            variant="ghost"
-            size="icon"
-            onClick={toggleTheme}
-            className="rounded-xl"
-          >
-            {theme === "light" ? (
-              <Moon className="h-5 w-5" />
-            ) : (
-              <Sun className="h-5 w-5" />
-            )}
-          </Button>
+          <ThemeToggle />
 
           <Button variant="ghost" size="icon" className="rounded-xl relative">
             <Bell className="h-5 w-5" />

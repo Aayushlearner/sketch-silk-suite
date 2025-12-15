@@ -135,6 +135,25 @@ All colors MUST be HSL.
     animation: parallax-float 12s ease-in-out infinite;
   }
 
+  /* Dark mode image adjustments */
+  .dark img {
+    filter: brightness(0.9) contrast(1.1);
+  }
+
+  .dark .hero-image {
+    filter: brightness(0.8) contrast(1.2) saturate(0.9);
+  }
+
+  /* Dark mode gradient overlays */
+  .dark .bg-gradient-to-br {
+    background: linear-gradient(to bottom right, hsl(var(--background)), hsl(var(--background)), hsl(var(--muted)) / 0.3);
+  }
+
+  /* Smooth theme transitions */
+  * {
+    transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+  }
+
   @keyframes parallax-float {
     0%, 100% {
       transform: translateY(0) translateX(0) scale(1);
